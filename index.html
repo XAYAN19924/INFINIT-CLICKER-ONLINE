@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <title>The Unit • Infinity Clicker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <div class="eyebrow">WEB GAME</div>
+        <h1>The Unit</h1>
+        <div class="subtitle">INFINITY CLICKER</div>
+      </div>
+      <div class="header-right">
+        <button id="changeName" class="name-button" type="button"><span id="currentName">Player</span> · Change name</button>
+        <div class="session"><span class="dot"></span><span id="sessionCount">0</span> player(s) online</div>
+      </div>
+    </header>
+
+    <section class="game">
+      <aside class="menu panel">
+        <h2>Progression</h2>
+        <button class="tab active" data-tab="upgrades" type="button"><span>⚡</span><b>Upgrades</b><small>Boost your click power</small></button>
+        <button class="tab" data-tab="rebirth" type="button"><span>↻</span><b>Rebirth</b><small>Reset for permanent power</small></button>
+        <button class="tab" data-tab="ultrarebirth" type="button"><span>✦</span><b>Ultra Rebirth</b><small>Reach the next layer</small></button>
+        <button class="tab" data-tab="prestige" type="button"><span>◆</span><b>Prestige</b><small>Reset everything for prestige</small></button>
+        <div class="menu-footer">
+          <div><span>Multiplier</span><strong id="multiplier">x1</strong></div>
+          <div><span>Rebirths</span><strong id="rebirthCount">0</strong></div>
+          <div><span>Ultra Rebirths</span><strong id="ultraCount">0</strong></div>
+          <div><span>Prestige</span><strong id="prestigeCount">0</strong></div>
+        </div>
+      </aside>
+
+      <section class="clicker panel">
+        <div class="score-label">YOUR CLICKS</div>
+        <div id="score" class="score">0</div>
+        <button id="clickButton" aria-label="Click" type="button">
+          <span>CLICK</span>
+          <small>+<b id="clickPower">1</b> PER CLICK</small>
+        </button>
+        <div class="cps-box"><span>CPS</span><strong id="cps">0.0</strong></div>
+        <div class="hint">Each click adds power to your score.</div>
+
+        <div id="tabPanel" class="tab-panel">
+          <div id="upgradesTab" class="tab-content active"></div>
+          <div id="rebirthTab" class="tab-content"></div>
+          <div id="ultrarebirthTab" class="tab-content"></div>
+          <div id="prestigeTab" class="tab-content"></div>
+        </div>
+      </section>
+
+      <aside class="leaderboard panel">
+        <div class="leader-head">
+          <h2>Leaderboard</h2>
+          <span id="syncStatus" class="sync offline">CONNECTING</span>
+        </div>
+        <p class="leader-sub">Website players · live</p>
+        <ol id="leaderboard"></ol>
+      </aside>
+    </section>
+  </main>
+
+  <div id="nameModal" class="modal" aria-modal="true" role="dialog">
+    <div class="modal-card">
+      <div class="modal-kicker">WELCOME TO THE UNIT</div>
+      <h2>Choose your player name</h2>
+      <p>Your name appears on the live website leaderboard. Keep it under 24 characters.</p>
+      <input id="nameInput" maxlength="24" autocomplete="nickname" placeholder="Player name" aria-label="Player name">
+      <button id="nameSave" type="button">ENTER THE GAME</button>
+    </div>
+  </div>
+
+  <!--
+  GitHub Pages:
+  replace the empty string below with your deployed backend URL, for example:
+  https://the-unit-api.onrender.com
+-->
+<script>
+  window.THE_UNIT_API_URL = "";
+</script>
+<script src="app.js"></script>
+</body>
+</html>
