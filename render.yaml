@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: the-unit-infinity-clicker
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
